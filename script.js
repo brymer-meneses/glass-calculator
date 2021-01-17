@@ -24,7 +24,7 @@ class Calculator {
     append(element) {
 
         // Avoids multiple '.' in screen
-        if (this.currentOperand.includes('.')) return 
+        if (this.currentOperand.includes('.') && element === ".") return 
         
 
         // Empties the screen if there has been a recent result computed
