@@ -48,15 +48,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: space-between;
     align-items: center;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 .calculator {
+
     background: white;
-    min-height: 95vh;
-    min-width: 40vw;
     background: linear-gradient(
         to right top,
         rgba(255, 255, 255, 0.8),
