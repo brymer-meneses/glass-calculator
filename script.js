@@ -94,7 +94,7 @@ class Calculator {
 
     compute() {
 
-        // Converts strings to floats to perform computation
+        // Converts string to float to perform computation
          
         const previousNumber = parseFloat(this.previousOperand)
         const currentNumber = parseFloat(this.currentOperand)
