@@ -73,7 +73,9 @@ class Calculator {
 
         } else if (calculatorFunction === "=") {
 
-            if (this.previousOperand.includes('=') || this.currentOperand === "" 
+            if (
+               this.previousOperand.includes('=') 
+            || this.currentOperand === "" 
             || this.operation === undefined) return
 
             this.compute()
@@ -82,10 +84,34 @@ class Calculator {
     }
 
     applyOperation(operation) {
-        if (this.currentOperand === "") return
+
+        // Allow input of negative numbers
         this.operation = operation
-        this.previousOperand = `${this.currentOperand} ${this.operation}`
-        this.currentOperand = ""
+
+        // Only the subtraction operation is allowed to be appended without
+        // first entering a number
+        if (this.currentOperand === "" && operation !== "-") {
+            return
+        } 
+        
+        if (this.currentOperand === "" && operation === "-" && 
+          !(this.currentScreenElement.innerHTML.includes("-")) ) {
+        
+            this.append("-")
+
+        } else {
+            // The only time this is possible is when this.currentOperand and
+            // this.operation are equal to - 
+            // If it happens avoid duplicate "-"
+            if (this.currentOperand === this.operation) return
+
+            // Displays the previous number and the chosen operation
+            // Makes it easy to see the history of the calculation
+            this.previousOperand = `${this.currentOperand} ${this.operation}`
+            this.currentOperand = ""
+    
+        }
+       
 
         this.updateCurrentScreen()
         this.updatePreviousScreen()
