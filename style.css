@@ -119,7 +119,7 @@ main {
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 120px);
-    grid-template-rows: minmax(100px, auto) repeat(4,100px);
+    grid-template-rows: minmax(80px, auto) repeat(4,80px);
  
 }
 
